@@ -1,5 +1,5 @@
-import CSCI_152.Interfaces.IntQueue;
-import CSCI_152.Interfaces.IntStack;
+import Interfaces.IntQueue;
+import Interfaces.IntStack;
 
 import java.util.Arrays;
 public class ArrayIntQueue implements IntQueue

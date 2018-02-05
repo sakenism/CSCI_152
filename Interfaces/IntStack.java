@@ -1,4 +1,4 @@
-package CSCI_152.Interfaces;
+package Interfaces;
 
 public interface IntStack
 {
