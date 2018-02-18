@@ -4,7 +4,7 @@ public class Node<T>
 	private Node<T> link;
 	public Node(T val)
 	{
-		value = val;
+		this.value = val;
 	}
 	public T getValue()
 	{

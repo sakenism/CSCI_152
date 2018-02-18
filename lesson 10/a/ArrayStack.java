@@ -30,6 +30,9 @@ public class ArrayStack<T> implements Stack<T> {
   }
 
   @Override
+  /*
+   ** qqq
+  */
   public int getSize() {
 	return this.size;
   }
