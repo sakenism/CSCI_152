@@ -7,7 +7,7 @@ public class IsPalindrome
 		Queue<Character> q2 = new LinkedListQueue();
 		Stack<Character> st = new LinkedListStack();
 		int sz = 0;
-		char tmp = ' ';
+		char tmp = 'a';
 		sz = qo.getSize();
 		for(int i = 0; i < sz; i++)
 		{
