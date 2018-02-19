@@ -12,11 +12,6 @@ public class test2 extends IsBalanced
 
 		q.enqueue('}');
 		q.enqueue(')');
-	/*	q.enqueue('[');
-		q.enqueue(']');
-		q.enqueue(')');
-		q.enqueue('}');
-	*/
 
 
 		System.out.println(q.toString());
