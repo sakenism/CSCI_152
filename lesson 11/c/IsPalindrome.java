@@ -19,6 +19,7 @@ public class IsPalindrome
 				System.out.println(ex.getMessage());
 			}
 			st.push(tmp);
+			qo.enqueue(tmp);
 			q1.enqueue(tmp);
 		}
 		//System.out.println(q1.toString());

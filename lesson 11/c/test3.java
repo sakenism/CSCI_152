@@ -14,5 +14,6 @@ public class test3 extends IsPalindrome
 		{
 			System.out.println(ex.getMessage());
 		}
+		System.out.println(q.toString());
 	}
 }
