@@ -4,12 +4,19 @@ public class test2 extends IsBalanced
 	{
 		Queue<Character> q = new LinkedListQueue();
 		q.enqueue('{');
-		q.enqueue('}');
-		q.enqueue('[');
-		q.enqueue(']');
 		q.enqueue('(');
-		q.enqueue(')');
+		
+		q.enqueue('[');
+
 		q.enqueue(']');
+
+		q.enqueue('}');
+		q.enqueue(')');
+	/*	q.enqueue('[');
+		q.enqueue(']');
+		q.enqueue(')');
+		q.enqueue('}');
+	*/
 
 
 		System.out.println(q.toString());

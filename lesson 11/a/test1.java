@@ -35,17 +35,20 @@ public class test1 extends LinkedListQueue
 	   for(int i = 10; i <= 19; i++)
 	   {
 	   	q.enqueue(i * i + 2);
+	   	q.enqueue(i * i + 5);
 	   	try
 	   	{
 	   		System.out.println(q.dequeue());
+	   		System.out.println(q.dequeue());
+
 	   	}
 	   	catch(Exception ex)
 	   	{
 	   		System.out.println(ex.getMessage());
 	   	}
+		   System.out.println(q.toString() + q.getSize() + '\n');
 	   }
-
-	   System.out.println(q.toString());
+                                       
 	   q.clear();
 	   System.out.println(q.toString());
 		
@@ -54,7 +57,7 @@ public class test1 extends LinkedListQueue
 			q.enqueue(i * 4 + 4);
 		}
 
-	   System.out.println(q.toString());
+	   System.out.println(q.toString() + q.getSize());
 		
 	}
 }

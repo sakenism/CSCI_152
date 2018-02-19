@@ -5,6 +5,9 @@ public class IsBalanced extends LinkedListQueue
 		char ch, last = ' ';                   
 		boolean check = false;
 		Queue<Character> q = new LinkedListQueue();
+		Stack<Character> st = new LinkedListStack();
+		Stack<Character> stf = new LinkedListStack();
+
 		int a = 0, b = 0, c = 0, sz = old.getSize();
 	   for(int i = 1; i <= sz; i++)
 	   {
@@ -28,6 +31,74 @@ public class IsBalanced extends LinkedListQueue
 	   	System.out.println("There is somethin that is not bracket");
 	   	return false;
 	   }
+
+
+	   for(int i = 1; i <= sz; i++)
+	   {
+	   	try
+	   	{
+	   		char tmp = q.dequeue();
+	   		if(st.getSize() != 0)
+	   		{
+	   			char tmst = st.pop();
+	   			if(tmst == '{' && tmp == '}')
+	   			{
+	   				
+	   			}
+	   			else if(tmst == '(' && tmp == ')')
+	   			{
+	   				
+	   			}
+	   			else if(tmst == '[' && tmp == ']')
+	   			{
+	   				
+	   			}
+	   			else
+	   			{
+	   				st.push(tmst);
+	   				st.push(tmp);
+	   			}
+	   		}
+	   		else
+	   		{
+	   			st.push(tmp);
+	   		}
+	   	}	
+	   	catch(Exception ex)
+	   	{
+	   		System.out.println(ex.getMessage());
+	   	}
+	}                                                
+
+  	sz = st.getSize();
+  	for(int i = 1; i <= sz; i++)
+  	{
+  		try
+  		{
+  			stf.push(st.pop());
+  		}
+  		catch(Exception ex)
+  		{
+  			System.out.println(ex.getMessage());
+  		}
+  	}
+
+//		System.out.println("!" + stf.toString() + "!");
+
+	q.clear();
+	for(int i = 1; i <= sz; i++)
+	{
+		try
+		{
+			q.enqueue(stf.pop());			
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+	}
+
+
 		for(int i = 1; i <= sz; i++)
 		{
 			try
@@ -43,7 +114,7 @@ public class IsBalanced extends LinkedListQueue
 				if(ch == '(')
 					c++;
 
-			  	if(ch == ']')
+			  	if(ch == ']')       
 			  	{
 			  		if(last == '{' || last == '(')
 			  			return false;
@@ -60,7 +131,7 @@ public class IsBalanced extends LinkedListQueue
 				
 				if(ch == ')')
 			  	{
-			  		if(last == '{' || last == ']')
+			  		if(last == '{' || last == '[')
 			  			return false;
 			  		else
 				  		c--;

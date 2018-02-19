@@ -5,7 +5,8 @@ public class test3 extends IsPalindrome
 		Queue<Character> q = new LinkedListQueue();	
 		q.enqueue('A');
 		q.enqueue('B');
-		q.enqueue('A');
+		q.enqueue('B');
+		q.enqueue('C');
 		try
 		{
 			System.out.println(isPalindrome(q));
