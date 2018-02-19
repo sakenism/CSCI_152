@@ -1,9 +1,23 @@
 public class IsBalanced extends LinkedListQueue
 {
-	public static boolean isBalanced(Queue<Character> q)
+	public static boolean isBalanced(Queue<Character> old)
 	{
-		char ch, last = '-';
+		char ch, last = '-';                   
+		Queue<Character> q = new LinkedListQueue();
 		int a = 0, b = 0, c = 0, sz = q.getSize();
+	   for(int i = 1; i <= sz; i++)
+	   {
+	   	try
+	   	{
+	   		char tmp = old.dequeue();
+	   		q.enqueue(tmp);
+	   		old.enqueue(tmp);
+	   	}
+	   	catch(Exception ex)
+	   	{
+	   		System.out.println(ex.getMessage());
+	   	}
+	   }
 		for(int i = 1; i <= sz; i++)
 		{
 			try
@@ -39,7 +53,7 @@ public class IsBalanced extends LinkedListQueue
 				  		c--;
 				}
 
-				q.enqueue(ch);
+				//q.enqueue(ch);
 			  	last = ch;
 			  	if(a < 0 || b < 0 || c < 0)
 			  		return false;

@@ -1,4 +1,3 @@
-
 public class IsPalindrome 
 {
 	public static boolean isPalindrome(Queue<Character> qo)	
