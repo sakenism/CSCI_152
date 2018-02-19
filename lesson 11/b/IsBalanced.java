@@ -2,9 +2,10 @@ public class IsBalanced extends LinkedListQueue
 {
 	public static boolean isBalanced(Queue<Character> old)
 	{
-		char ch, last = '-';                   
+		char ch, last = ' ';                   
+		boolean check = false;
 		Queue<Character> q = new LinkedListQueue();
-		int a = 0, b = 0, c = 0, sz = q.getSize();
+		int a = 0, b = 0, c = 0, sz = old.getSize();
 	   for(int i = 1; i <= sz; i++)
 	   {
 	   	try
@@ -12,11 +13,20 @@ public class IsBalanced extends LinkedListQueue
 	   		char tmp = old.dequeue();
 	   		q.enqueue(tmp);
 	   		old.enqueue(tmp);
+	   		if(tmp != '(' && tmp != '{' && tmp != '[' && tmp != '}' && tmp != ']' && tmp != ')')
+	   		{
+	   			check = true;		
+	   		}
 	   	}
 	   	catch(Exception ex)
 	   	{
 	   		System.out.println(ex.getMessage());
 	   	}
+	   }
+	   if(check == true)
+	   {
+	   	System.out.println("There is somethin that is not bracket");
+	   	return false;
 	   }
 		for(int i = 1; i <= sz; i++)
 		{
@@ -24,7 +34,10 @@ public class IsBalanced extends LinkedListQueue
 			{
 				ch = q.dequeue();
 				if(ch == '{')
+				{
 					a++;
+//					System.out.println("@");
+				}
 				if(ch == '[')
 					b++;
 				if(ch == '(')
@@ -57,6 +70,7 @@ public class IsBalanced extends LinkedListQueue
 			  	last = ch;
 			  	if(a < 0 || b < 0 || c < 0)
 			  		return false;
+
 			}
 			catch(Exception ex)
 			{

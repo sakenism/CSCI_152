@@ -3,8 +3,8 @@ public class test3 extends IsPalindrome
 	public static void main(String[] args)
 	{
 		Queue<Character> q = new LinkedListQueue();	
-		q.enqueue('a');
-		q.enqueue('b');
+		q.enqueue('A');
+		q.enqueue('B');
 		q.enqueue('A');
 		try
 		{

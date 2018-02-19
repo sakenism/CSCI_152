@@ -23,7 +23,6 @@ public class IsPalindrome
 			q1.enqueue(tmp);
 		}
 		//System.out.println(q1.toString());
-		sz = st.getSize();
 		for(int i = 0; i < sz; i++)
 		{
 			try
@@ -37,7 +36,6 @@ public class IsPalindrome
 			q2.enqueue(tmp);
 		}
 		//System.out.println("!" + q2.toString());
-		sz = q2.getSize();
 		for(int i = 0; i < sz; i++)
 		{
 			try
