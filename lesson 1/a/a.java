@@ -9,6 +9,6 @@ public class a
 		l = in.nextInt();	
 		w = in.nextInt();
 		h = in.nextInt();
-		System.out.printf("Volume is %d and surface area is %d ", l * w * h, 2 * (l * w + w * h + l * h));
+		System.out.printf("Volume as %d and surface area is %d ", l * w * h, 2 * (l * w + w * h + l * h));
 	}
 }
