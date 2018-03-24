@@ -15,7 +15,7 @@ public class test
 		System.out.println(q.toString());
 
 
-
+		                           // zhuma katok
 		q.add(14);
 
 		q.add(-6);
