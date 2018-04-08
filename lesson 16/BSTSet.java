@@ -24,15 +24,13 @@ public class BSTSet<T extends Comparable> implements Set<T>
 		size++;
 	}
                     
-
-
 /*
 
 public class Student implements Comparable 
 	public int compareTo(Object student)
 	{
 		Student s = (Student) student;
-		return id.compareTo(s.getId());
+		return id.comapreTo(s.getId());
 	}
 
 
@@ -92,9 +90,6 @@ public class Student implements Comparable
 
 	  	return toStringHelper(node.getLeft()) + node.getValue() + toStringHelper(node.getRight());
 	}
-
-
-
 
 	public void addHelper(TreeNode<T> node, T value)
 	{

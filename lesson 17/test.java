@@ -3,7 +3,18 @@ public class test
 	public static void main(String[] args)
 	{
 		Set<Integer> q = new BSTSet();
-		q.add(5); 
+
+		q.add(7);
+
+		q.add(4);
+		q.add(3);
+		q.add(5);
+		
+		System.out.println(q.toString());
+		q.add(6);
+		
+		System.out.println(q.toString());
+/*		q.add(5); 
 		q.add(12);
 		q.add(3);
 		q.add(6);
@@ -49,6 +60,6 @@ public class test
 			System.out.println(ex.getMessage());
 		}
 		System.out.println(q.toString() + " " + q.getSize());
-
+*/
 	}
 }

@@ -5,8 +5,8 @@ public class LLQHashTableSet<T> implements Set<T> {
     private int size;
     private int index;
 
-    public LLQHashTableSet(int  index) {
-        buckets = (LinkedListQueue<T>[]) new LinkedListQueue[ index];
+    public LLQHashTableSet(int index) {
+        buckets = (LinkedListQueue<T>[]) new LinkedListQueue[index];
         size = 0;
         this.index = index;
     }
@@ -18,14 +18,9 @@ public class LLQHashTableSet<T> implements Set<T> {
             
             if (buckets[hash] == null) {
                 buckets[hash] = new LinkedListQueue();
-                buckets[hash].enqueue(value);
-                size++;
             } 
-            else 
-            {
-                buckets[hash].enqueue(value);
-                size++;
-            }
+            buckets[hash].enqueue(value);
+            size++;
         } 
     }
 

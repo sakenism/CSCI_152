@@ -27,7 +27,7 @@ public class Student implements Comparable
 	{
 		if(q instanceof Student)
 		{
-			Student fin = (Student)q;
+			Student fin = (Student)(q);
 			return id == fin.id && name.equals(fin.name); 
 		}
 		return false;
