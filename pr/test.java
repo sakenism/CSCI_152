@@ -1,3 +1,4 @@
+import java.util.*;
 public class test
 {
 	public static void main(String[] args)
@@ -14,7 +15,11 @@ public class test
 		Book cc = new Book("Craig, John J.", "Introduction to robotics:Mechanics and control", 2005, "9780131236295", "Pearson Education", "TJ211   .C67 2005", 2, nd);
 		n.add(cc);
 		n.remove(c);
-
-		System.out.print(n.toString() + " @@@ " + n.getSize());
+		String cq = "a";
+		cq = cq + "vb";
+		ArrayList<String> q = new ArrayList();
+		q = n.toStr();
+		//q.remove();
+		System.out.print(q);
 	}
 }

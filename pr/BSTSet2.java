@@ -1,3 +1,4 @@
+import java.util.*;
 public class BSTSet2<T extends Comparable> implements Set<T> {
 
   private Node root;
@@ -110,8 +111,38 @@ public class BSTSet2<T extends Comparable> implements Set<T> {
   @Override
   public String toString() {
 //	return out(root, 0) + "[" + root + "]";
-	return "[" + (root == null ? "" : root) + "(" + size + ")]";
+	return root.toString();
   }
+
+
+  public ArrayList<String> toStr() {
+//	return out(root, 0) + "[" + root + "]";
+  	String nd = root.toString();
+  	String tmp = new String();
+
+  	int sz = nd.length();
+  	ArrayList<String> q = new ArrayList();
+  	//q.add("1");
+ 	//System.out.println(nd);
+  	for(int i = 0; i < sz; i++)
+  	{
+  	//	System.out.println(nd.charAt(i));
+  		if(nd.charAt(i) != '~')
+  		{
+  			tmp = tmp + nd.charAt(i);
+
+  		}
+  		else
+  		{
+  			q.add(tmp);
+  			tmp = "";
+  		}
+  	}
+  	//System.out.print(q); 
+  	return q;
+  }
+
+
 
   private Node find(T value) {
 	Node cur = root;

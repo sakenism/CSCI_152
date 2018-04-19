@@ -98,10 +98,11 @@ public class Book implements Comparable
 			return stock.compareTo(s.getStock());
 	}
 
+
 	public String toString()
 	{
 		String res = "";
-		res += this.name + "; " + this.title + "; " + this.year + "; " + this.id + ";  " + this.publisher + "; " + this.llc + "; " + this.stock + "\n";
+		res += this.name + "~" + this.title + "~" + this.year + "~" + this.id + "~ " + this.publisher + "~" + this.llc + "~" + this.stock;
 		return res;
 	}
 
