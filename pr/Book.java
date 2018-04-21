@@ -2,13 +2,13 @@ public class Book implements Comparable
 {
 	private String name;
 	private String title;
-	private Integer year;
+	private String year;
 	private String id;
 	private String publisher;
 	private String llc;
-	private Integer stock;
+	private String stock;
 	private Integer need;
-	public Book(String name, String title, Integer year, String id, String publisher, String llc, Integer stock, Integer need)
+	public Book(String name, String title, String year, String id, String publisher, String llc, String stock, Integer need)
 	{
 		this.name = name;
 		this.title = title;
@@ -31,7 +31,7 @@ public class Book implements Comparable
 	{
 		return this.title;
 	}
-	public int getYear()
+	public String getYear()
 	{
 		return this.year;
 	}
@@ -43,7 +43,7 @@ public class Book implements Comparable
 	{
 		return this.llc;
 	}
-	public int getStock()
+	public String getStock()
 	{
 		return this.stock;
 	}
@@ -60,7 +60,7 @@ public class Book implements Comparable
 	{
 		this.title = title;
 	}
-	public void setYear()
+	public void setYear(String year)
 	{
 		this.year = year;
 	}
@@ -72,7 +72,7 @@ public class Book implements Comparable
 	{
 		this.llc = llc;
 	}
-	public void setStock(Integer stock)
+	public void setStock(String stock)
 	{
 		this.stock = stock;
 	}
@@ -94,15 +94,35 @@ public class Book implements Comparable
 			return publisher.compareTo(s.getPublisher());
 		else if(need == 6)
 			return llc.compareTo(s.getLlc());
-		else	
+		else if(need == 7)	
 			return stock.compareTo(s.getStock());
+	
+		else if(need == -1)
+			return s.getName().compareTo(name);
+		else if(need == -2)
+			return s.getTitle().compareTo(title);
+		else if(need == -3)			
+			return s.getYear().compareTo(year);
+		else if(need == -4)
+			return s.getId().compareTo(id);
+		else if(need == -5)
+			return s.getPublisher().compareTo(publisher);
+		else if(need == -6)
+			return s.getLlc().compareTo(llc);
+		else	
+			return s.getStock().compareTo(stock);
+
+
+
+
 	}
 
-
+	@Override
 	public String toString()
 	{
 		String res = "";
-		res += this.name + "~" + this.title + "~" + this.year + "~" + this.id + "~ " + this.publisher + "~" + this.llc + "~" + this.stock;
+		res += this.name + "~" + this.title + "~" + this.year + "~" + this.id + "~ " + this.publisher + "~" + this.llc + "~" + this.stock + "~";
+		//System.out.println(res);
 		return res;
 	}
 

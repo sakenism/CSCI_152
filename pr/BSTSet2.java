@@ -115,13 +115,16 @@ public class BSTSet2<T extends Comparable> implements Set<T> {
   }
 
 
-  public ArrayList<String> toStr() {
+  public ArrayList<ArrayList<String>> toStr() {
 //	return out(root, 0) + "[" + root + "]";
   	String nd = root.toString();
-  	String tmp = new String();
+  	//System.out.print(nd + '\n');
+  	String tmp = "";
 
-  	int sz = nd.length();
-  	ArrayList<String> q = new ArrayList();
+  	int sz = nd.length(), j = 0, cnt = 0;
+  	ArrayList<ArrayList<String>> q =  new ArrayList<ArrayList<String>>();
+  	
+  	q.add(new ArrayList<String>());
   	//q.add("1");
  	//System.out.println(nd);
   	for(int i = 0; i < sz; i++)
@@ -130,13 +133,42 @@ public class BSTSet2<T extends Comparable> implements Set<T> {
   		if(nd.charAt(i) != '~')
   		{
   			tmp = tmp + nd.charAt(i);
-
-  		}
+		}
   		else
   		{
-  			q.add(tmp);
+  			//System.out.println(tmp);
+  			if(cnt == 7)
+  			{
+  				j++;
+  				cnt = 0;
+  				q.add(new ArrayList<String>());
+  			}
+  			q.get(j).add(tmp);
+  			cnt++;
   			tmp = "";
   		}
+  	}
+  	//System.out.print("J" + j);
+  	for(int i = 1; i <= j; i++)
+  	{
+  		String qtmp = q.get(i).get(0), qrmp = "";
+  		for(int z = 2; z < qtmp.length(); z++)
+  			qrmp += qtmp.charAt(z);
+  		//System.out.println(q.get(i).get(0));
+  		q.get(i).set(0, qrmp);
+
+  	//System.out.println(qrmp);
+  	//	System.out.println(q.get(i).get(0));
+  	}
+  	for(int i = 0; i <= j; i++)
+  	{
+  		String qtmp = q.get(i).get(0), qrmp = "";
+		qtmp = q.get(i).get(4);
+  		qrmp = "";
+  		for(int z = 1; z < qtmp.length(); z++)
+  			qrmp += qtmp.charAt(z);
+  		//System.out.println("QS" + qtmp + "!" + qrmp);
+  		q.get(i).set(4, qrmp);
   	}
   	//System.out.print(q); 
   	return q;
