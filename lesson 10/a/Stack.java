@@ -27,8 +27,6 @@ public interface Stack<T> {
   public T pop() throws Exception;
 
 
-  public T top() throws Exception;
-
 
 
   /**

@@ -27,6 +27,4 @@ public class Node<T>
 	{
 		return value.toString();
 	}
-
-
 }
