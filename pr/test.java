@@ -3,11 +3,14 @@ public class test
 {
 	public static void main(String[] args)
 	{
-		int nd = -1;
+		int nd = 2;
 		Book b = new Book("Bentley Jon", "Programming pearls", "2000", "9780201657883", "Addison-Wesley", "QA76.6 .B453 2000", "8", nd);
 		BSTSet2<Book> n = new BSTSet2();
-		Book a = new Book("Gustafsson, Fredrik", "Matlab for engineers explained", "2003", "9781852336974", "Springer", "TA345 .G878 2003", "20", nd);
-		Book c = new Book("Craig John J.", "Introduction to robotics:Mechanics and control", "2005", "9780131236295", "Springer", "TJ211   .C67 2005", "1", nd);
+		Book a = new Book("Gchasl", "Matlab for engineers explained", "2003", "9781852336974", "Springer", "TA345 .G878 2003", "20", nd);
+		Book c = new Book("Csacxas", "Introduction to robotics:Mechanics and control", "2005", "9780131236295", "Springer", "TJ211   .C67 2005", "1", nd);
+		
+
+
 		n.add(a);
 		n.add(c);
 		n.add(b);
